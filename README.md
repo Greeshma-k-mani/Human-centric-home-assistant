@@ -1,73 +1,105 @@
-# Human centric home assistant
+# EVA — Human Centered Embodied Home Assistant 🤖
 
-##  Project Overview  
-
-This project presents the **design and implementation of a  Human centric home assistant**.  
-The aim of the project is to develop a robot capable of basic **human interaction and home automation**, while gaining practical experience in **embedded systems, robotics, and AI-based technologies**.
-
-The project is currently **under development and learning stage**.
+> Voice-activated home assistant robot with face recognition, radar presence detection,
+> expressive head movement, and smart home automation.
+> 
+> 🥇 **First Place — INNOVIX, RISE 2026 | FISAT ECE Department**
 
 ---
 
-##  Project Objectives  
+## 🧠 What is EVA?
 
-- To build an interactive robot with basic human detection and interaction
-- To integrate vision, audio processing, and actuation using embedded platforms
-- To implement low-voltage home automation features
-- To gain hands-on experience in hardware design, programming, and system integration
+EVA is a fully functional human-centric home assistant robot built on **Raspberry Pi 2 + ESP32**,
+designed to recognize users, navigate to them, and assist through natural voice interaction.
 
----
-
-##  System Architecture (High Level)  
-
-- **Raspberry Pi**
-  - Used as the central processing unit
-  - Handles vision processing, audio processing, and decision making  
-
-- **ESP32 Microcontroller**
-  - Handles real-time actuation tasks
-  - Controls servo motors and relay modules  
-
-- **Camera**
-  - Enables face-based interaction  
-
-- **Display**
-  - Provides basic visual feedback  
+Unlike conventional voice assistants, EVA physically moves to the user, verifies identity
+through face recognition, and responds with expressive animations — making interaction
+more natural and personal.
 
 ---
 
-## Current Project Status  
+## ⚙️ System Architecture
 
-### ✅ Completed / In Progress  
-- ✔ Servo-based head movement (3 Degrees of Freedom)
-- ✔ Mechanical design created and **3D printed using Fusion 360**
-- ✔ PCB design completed
-- ✔ Basic hardware integration
-
-### Currently Learning & Implementing  
-- Servo motor control using **Python**
-- Programming using **VS Code**
-- Face recognition techniques
-- Human detection and speech interaction concepts
-- Integration between Raspberry Pi and ESP32
-
----
-
-##  Tools & Technologies Used  
-
-- **Programming Language:** Python  
-- **IDE:** Visual Studio Code  
-- **Hardware Platforms:** Raspberry Pi, ESP32  
-- **Design Tool:** Fusion 360  
-- **Domains:**  
-  - Robotics  
-  - Embedded Systems  
-  - Computer Vision  
-  - Home Automation  
+```
+┌─────────────────────────────────────────┐
+│         RASPBERRY PI 2 MODEL B          │
+│  Face Recognition · Voice · Navigation  │
+│  Intent Engine · Flask Web UI · Groq AI │
+└──────────────┬──────────────────────────┘
+               │ HTTP (WiFi)
+┌──────────────▼──────────────────────────┐
+│              ESP32 WROOM-32             │
+│  Motors · Servos · TFT · Radar · Face  │
+└──────────────────────────────────────────┘
+               │ HTTP (WiFi)
+┌──────────────▼──────────────────────────┐
+│            ESP8266 NodeMCU              │
+│     Garden Relay · Light Control        │
+└──────────────────────────────────────────┘
+```
 
 ---
 
-##  Project Status  
+## 🔧 Features
 
->
-Features and implementations are being added step by step as part of the learning process.
+| Feature | Details |
+|---------|---------|
+| 🎙️ Wake Word | Porcupine — "Hey Eva" |
+| 👁️ Face Recognition | OpenCV — Haar + LBPH |
+| 📡 Presence Detection | LD2410 mmWave Radar |
+| 😊 Face Display | ST7735R TFT — 6 bitmap expressions |
+| 🤖 3-DoF Head | MG90S servos — Yaw · Pitch · Roll |
+| 🚗 Navigation | TB6612FNG + N25 gear motors |
+| 🏠 Home Automation | ESP8266 relay — pump + lights |
+| 🧠 AI Conversation | Groq LLM (Llama 3) |
+| 🌐 Web UI | Flask dashboard — auth + controls |
+| 🔌 Custom PCB | KiCad 9.0.5 — full system integration |
+| 🖨️ Body | 3D printed enclosure (PLA) |
+
+---
+
+## 🛠️ Hardware
+
+- Raspberry Pi 2 Model B
+- ESP32 WROOM-32 DevKit
+- ESP8266 NodeMCU
+- Pi Camera Module V2 (NoIR)
+- ST7735R TFT Display
+- HLK-LD24 mmWave Radar
+- TB6612FNG Motor Driver
+- N25 Metal Gear Motors × 2
+- MG90S Servo Motors × 3
+- PAM8403 Audio Amplifier
+- Custom PCB (KiCad 9.0.5)
+- 2S Li-ion Battery (7.4V)
+
+---
+
+## 💻 Software Stack
+
+```python
+stack = {
+    "Pi"      : ["Python 3", "OpenCV", "Porcupine", "Flask",
+                 "edge-TTS", "Google STT", "Groq LLM"],
+    "ESP32"   : ["Arduino C++", "WebServer", "SPI", "LEDC PWM"],
+    "ESP8266" : ["Arduino C++", "ESP8266WebServer"],
+    "PCB"     : ["KiCad 9.0.5"],
+    "Body"    : ["Fusion 360", "3D Printing (PLA)"],
+}
+```
+
+---
+
+
+## 📬 Contact
+
+[![GitHub](https://img.shields.io/badge/GitHub-Greeshma--k--mani-181717?style=for-the-badge&logo=github)](https://github.com/Greeshma-k-mani)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Greeshma%20K%20Mani-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/greeshma-k-mani)
+
+---
+
+GitHub: https://github.com/Greeshma-k-mani
+
+LinkedIn: https://www.linkedin.com/in/greeshma-k-mani
+
+<p align="center"><i>Built with curiosity. Powered by embedded silicon. Driven by the need to build things that actually work.</i></p>
